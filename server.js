@@ -5,6 +5,9 @@ const middlewares = jsonServer.defaults();
 const port = process.env.PORT || 3200; // <== You can change the port
 
 server.use(middlewares);
+server.get('/about', (req, res) => {
+  res.json({ info: 'This is a fake server for authentication.' });
+});
 server.use(router);
 
 server.listen(port);
